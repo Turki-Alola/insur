@@ -1,0 +1,37 @@
+.form {
+    /* 45% */
+    width: 95%;
+    height: 80%;
+    visibility: visible;
+    /* margin-top: 150px; */
+    /* margin-top: -125px; */
+    /* margin-left: -125px; */
+    display: block;
+    position: fixed;
+    /* 50% */
+    left: 3%;
+    top: 10%;
+    transition: 1s;
+    /* transition-delay: 1s; */
+    background: rgba(255, 255, 255, 0.7);
+    /* border: 1px solid black; */
+    padding: 20px;
+    padding-bottom: 60px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: -1;
+    /* overflow: hidden; */
+}
+
+.subform {
+    transition: 10s;
+    /* transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear; */
+}
+
+
+/* .form-wrapper {
+    transition: 1s;
+} */
+
+
+/* overflow: hidden; */
