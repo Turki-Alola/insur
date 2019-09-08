@@ -1,6 +1,6 @@
 .form {
     /* 45% */
-    width: 95%;
+    width: 45%;
     height: 80%;
     visibility: visible;
     /* margin-top: 150px; */
@@ -9,7 +9,7 @@
     display: block;
     position: fixed;
     /* 50% */
-    left: 3%;
+    left: 50%;
     top: 10%;
     transition: 1s;
     /* transition-delay: 1s; */

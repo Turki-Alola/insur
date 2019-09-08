@@ -4,10 +4,12 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Toggle from 'react-toggle'
 // import ProgressBar from 'react-bootstrap/ProgressBar'
 import Spinner from 'react-bootstrap/Spinner'
 // import Col from 'react-bootstrap/Col';
 import './form.css';
+import "react-toggle/style.css"
 import Step1 from './subforms/step1.js';
 import Step2 from './subforms/step2.js';
 import Step3 from './subforms/step3.js';
@@ -21,12 +23,13 @@ export default class form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentStep: 4,
+            currentStep: 1,
             display: this.props.display,
             id: '',
             date: '',
             submitted: false,
-            displayResults: true
+            displayResults: false,
+            insurType: "Third Party"
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -51,7 +54,7 @@ export default class form extends React.Component {
         setTimeout(() => {
             this.setState({
                 displayResults: true,
-                currentStep: this.state.currentStep +=1
+                currentStep: this.state.currentStep += 1
             })
         }, 0);
 
@@ -71,7 +74,7 @@ export default class form extends React.Component {
 
     prev = () => {
         let currentStep = this.state.currentStep;
-        if(currentStep <= 4 && this.state.displayResults){
+        if (currentStep <= 4 && this.state.displayResults) {
             this.setState({
                 displayResults: false,
                 submitted: false
@@ -93,7 +96,7 @@ export default class form extends React.Component {
         let submitted = this.state.submitted;
         console.log(currentStep);
         console.log(this.state);
-       
+
         if (submitted === true && currentStep === 3) {
             // this.setState({
             //     submitted: !submitted
@@ -119,7 +122,7 @@ export default class form extends React.Component {
             return (
                 <Button style={{ right: "5%", bottom: "3%", position: "absolute" }} onClick={this.handleSubmit} size="lg">Submit</Button>
             );
-        } else if(currentStep >3){
+        } else if (currentStep > 3) {
             return null;
         }
     }
@@ -144,9 +147,23 @@ export default class form extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit} className="form" style={{ opacity: this.props.display ? "1" : "0" }} id = "masterForm">
+                <form onSubmit={this.handleSubmit} className="form" style={{ opacity: this.props.display ? "1" : "0" }} id="masterForm">
+                    {this.state.currentStep < 4 ?
+
+                        <label
+                            style={{ position: "absolute", left: "5%" }}
+                        >
+                            <Toggle
+                                defaultChecked={this.state.baconIsReady}
+                                onChange={this.handleBaconChange}
+                                icons={false}
+
+                            />
+                            <span style={{ paddingLeft: "5px", top: "50%" }}>{this.state.insurType}</span>
+                        </label>
+                        : null}
                     <ProgressBar
-                        currentStep = {this.state.currentStep}
+                        currentStep={this.state.currentStep}
                     />
                     <Step1
                         handleChange={this.handleChange}

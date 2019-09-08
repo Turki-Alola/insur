@@ -22,8 +22,8 @@ export default class Step1 extends React.Component {
 
     render() {
         if (this.props.displayResults) {
-            // document.getElementById('masterForm').style.width = "95%";
-            // document.getElementById('masterForm').style.left = "3%";
+            document.getElementById('masterForm').style.width = "95%";
+            document.getElementById('masterForm').style.left = "3%";
             return (
                 <div className="listing" >
                     <Scrollbars
