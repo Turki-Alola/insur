@@ -28,7 +28,7 @@ export default class InputBar extends React.Component {
         return (
             <div className=''  >
                 
-                <button onClick={this.props.onClick} >Display</button>
+                {/* <button onClick={this.props.onClick} >Display</button> */}
                 <div>
                 <img src="" style={{width: "400px"}}/>
                 </div>

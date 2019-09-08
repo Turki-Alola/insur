@@ -56,7 +56,7 @@ export default class form extends React.Component {
                 displayResults: true,
                 currentStep: this.state.currentStep += 1
             })
-        }, 0);
+        }, 3000);
 
     }
     next = () => {
@@ -143,24 +143,30 @@ export default class form extends React.Component {
             return null;
         }
     }
+    handleToggleChange = () => {
+        this.setState({
+            insurType: !this.state.insurType
+        })
+    }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit} className="form" style={{ opacity: this.props.display ? "1" : "0" }} id="masterForm">
                     {this.state.currentStep < 4 ?
-
                         <label
                             style={{ position: "absolute", left: "5%" }}
                         >
                             <Toggle
                                 defaultChecked={this.state.baconIsReady}
-                                onChange={this.handleBaconChange}
+                                onChange={this.handleToggleChange}
                                 icons={false}
+                                style={{}}
 
                             />
-                            <span style={{ paddingLeft: "5px", top: "50%" }}>{this.state.insurType}</span>
+                            <span style={{ paddingLeft: "10px" }}>{this.state.insurType ? "Third Party" : "Premium"}</span>
                         </label>
+                        
                         : null}
                     <ProgressBar
                         currentStep={this.state.currentStep}
@@ -185,7 +191,7 @@ export default class form extends React.Component {
                         display={this.state.display}
                         displayResults={this.state.displayResults}
                     />
-
+                    
                     {this.getPrev}
                     {this.getNext}
                 </form>

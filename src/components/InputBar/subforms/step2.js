@@ -21,49 +21,49 @@ export default class Step1 extends React.Component {
             // document.getElementById('masterForm').style.left = "50%";
             return (
                 <div className='subform' >
-                        <Form.Row>
-                            <Form.Group as={Col} controlId="formGridUsername">
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                            <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                        </Form.Row>
-                        <Form.Row>
-                            <Form.Group as={Col} controlId="formGridUsername" >
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                            <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Label>Policy Start Date</Form.Label>
-                                <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                        </Form.Row>
-                        <Form.Row>
-                            <Form.Group as={Col} controlId="formGridUsername" >
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                            <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                        </Form.Row>
-                        <Form.Row>
-                            <Form.Group as={Col} controlId="formGridUsername" >
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                            <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Label>Step2 info</Form.Label>
-                                <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
-                            </Form.Group>
-                        </Form.Row>
-                        
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="formGridUsername">
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridPassword">
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="formGridUsername" >
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridPassword">
+                            <Form.Label>Policy Start Date</Form.Label>
+                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="formGridUsername" >
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridPassword">
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="formGridUsername" >
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridPassword">
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                    </Form.Row>
 
-                        
+
+
                 </div>
 
             );

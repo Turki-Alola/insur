@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './header.css'
 import { Button } from 'reactstrap';
-//import Logo from './logo.ico'
+import Vision from './2030.png'
 import ReactTooltip from 'react-tooltip'
 // import { MDBIcon, MDBContainer } from 'mdbreact';
 //import Nav from 'react-bootstrap/Navbar'
@@ -37,7 +37,7 @@ export default class Header extends Component {
                     </li>
                     
                 </ul>
-                {/* <img src={Logo} style={{ position: "absolute", right: "30px", top: "15px" }} /> */}
+                <img src={Vision} style={{ position: "absolute", right: "5%", top: "15px" }}  width ="100" height="50"/>
             
             </div>
             
