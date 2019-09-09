@@ -25,23 +25,38 @@ export default class form extends React.Component {
         this.state = {
             currentStep: 1,
             display: this.props.display,
-            id: '',
-            date: '',
             submitted: false,
             displayResults: false,
-            insurType: "Third Party"
+            insurType: false,
+            change: true,
+            application: {
+            }
         }
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange = (event) => {
         const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
+        //sub-state work around
+
+        this.state.application[name] = value;
         // console.log("name: ", name);
         // console.log("value: ", value);
         // console.log("event: ", event.target.value);
+        // console.log("change: ",this.state.change)
+        console.log(this.state)
+    }
+    handleSpecialChange = (event) => {
+        const { name, value } = event.target;
+        //sub-state work around
+        this.setState({
+            change: !this.state.change
+        })
+        this.state.application[name] = value;
+        console.log("name: ", name);
+        console.log("value: ", value);
+        // console.log("event: ", event.target.value);
+        console.log("change: ", this.state.change)
     }
 
     handleSubmit = (event) => {
@@ -166,15 +181,17 @@ export default class form extends React.Component {
                             />
                             <span style={{ paddingLeft: "10px" }}>{this.state.insurType ? "Third Party" : "Premium"}</span>
                         </label>
-                        
+
                         : null}
                     <ProgressBar
                         currentStep={this.state.currentStep}
                     />
                     <Step1
                         handleChange={this.handleChange}
+                        handleSpecialChange={this.handleSpecialChange}
                         display={this.state.display}
                         currentStep={this.state.currentStep}
+                        specialProps={this.state.application}
                     />
                     <Step2
                         handleChange={this.handleChange}
@@ -191,7 +208,7 @@ export default class form extends React.Component {
                         display={this.state.display}
                         displayResults={this.state.displayResults}
                     />
-                    
+
                     {this.getPrev}
                     {this.getNext}
                 </form>

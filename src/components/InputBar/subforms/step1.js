@@ -23,14 +23,31 @@ export default class Step1 extends React.Component {
                 <div className='subform' >
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
-                            <Form.Label>Step1 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Label>National ID / Iqama</Form.Label>
+                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange} ></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
-                            <Form.Label>Step1 info</Form.Label>
-                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Label>Policy Start date</Form.Label>
+                            <Form.Control type="date" placeholder="" name="policyStartDate" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="formGridUsername" >
+                            <Form.Label>ID / Iqama expiry date</Form.Label>
+                            <Form.Control type="month" placeholder="" name="idExpiryDate" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                           
+                        <Form.Group as={Col} controlId="formGrid">
+                            <Form.Label>special</Form.Label>
+                            <Form.Control as="select"  name="special" onChange={this.props.handleSpecialChange}>
+                            <option >1</option>
+                            <option >2</option>
+                            <option >3</option>
+                            </Form.Control>
+                        </Form.Group>
+                        
+                    </Form.Row>
+                    {this.props.specialProps.special === "3" ? 
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>Step1 info</Form.Label>
@@ -41,16 +58,7 @@ export default class Step1 extends React.Component {
                             <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridUsername" >
-                            <Form.Label>Step1 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridPassword">
-                            <Form.Label>Step1 info</Form.Label>
-                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
-                        </Form.Group>
-                    </Form.Row>
+                    : null}
 
 
 
