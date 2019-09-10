@@ -4,7 +4,6 @@
 
 .companyName {
     float: left;
-    left: -2000px;
     margin-left: -6.5%;
 }
 
@@ -24,6 +23,15 @@
     top: 10%;
 }
 
-.description{
-text-align: left;
+.description {
+    text-align: left;
+}
+
+#btn-circle {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 6px 0;
+    line-height: 1.42;
+    border-radius: 20px;
 }

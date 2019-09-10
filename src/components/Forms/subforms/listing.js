@@ -2,7 +2,10 @@ import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+// import { Button } from 'reactstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
+// import { makeStyles } from 'material-ui/core/styles';
+// import Button from 'material-ui/core/Button';
 
 import Logo from '../../Assets/logo.ico'
 import './results.css'
@@ -29,9 +32,8 @@ export default class Listing extends React.Component {
                                 <span className="companyName"> CompanyCompanyCompany</span>
                             </div>
                             <div className="price container">
+                            <Button variant="link" style={{float: "right"}}>Buy</Button>
                                 <span className="price">12331.00 SR</span>
-                                <div>
-                                </div>
                             </div>
                         </div>
 

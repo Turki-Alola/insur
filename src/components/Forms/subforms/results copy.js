@@ -30,7 +30,7 @@ export default class Step1 extends React.Component {
                     >
                         <Table responsive size="sm" hover h>
                             <tbody>
-                                <tr style = {{columnWidth: "10px"}}>
+                                <tr style={{ columnWidth: "10px" }}>
                                     <td colSpan="0">
                                         <Media as="div" >
                                             <img

@@ -192,13 +192,13 @@ export default class form extends React.Component {
                             style={{ position: "absolute", left: "5%" }}
                         >
                             <Toggle
-                                defaultChecked={this.state.baconIsReady}
+                                defaultChecked={this.state.insurType}
                                 onChange={this.handleToggleChange}
                                 icons={false}
                                 style={{}}
 
                             />
-                            <span style={{ paddingLeft: "10px" }}>{this.state.insurType ? "Third Party" : "Premium"}</span>
+                            <span style={{ paddingLeft: "10px" }}>{this.state.insurType ? "Premium" : "Third Party"}</span>
                         </label>
 
                         : null}

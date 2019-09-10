@@ -70,7 +70,7 @@ export default class Step1 extends React.Component {
 
                     </Form.Row>
                     {this.props.specialProps.special === "Yes" ?
-                        <div key="inline-checkbox" className="mb-3" label="pick">
+                        <div key="inline-checkbox" className="mb-3" label="pick" >
                             <Form.Check 
                                 inline
                                 label="1"

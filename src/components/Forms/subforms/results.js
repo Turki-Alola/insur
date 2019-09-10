@@ -40,23 +40,6 @@ export default class Step1 extends React.Component {
                         <Listing />
                         <Listing />
                     </Scrollbars>
-                    {/* <ul className="list-unstyled">
-                        <Media as="div">
-                            <img
-                                width={64}
-                                height={64}
-                                className="align-self-start mr-3"
-                                src={Logo}
-                                alt="Generic placeholder"
-                            />
-                            <Media.Body>
-                                <h5>Price</h5>
-                                <p>
-                                    Company
-                                </p>
-                            </Media.Body>
-                        </Media>
-                    </ul> */}
                 </div>
 
             )
