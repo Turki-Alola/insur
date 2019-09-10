@@ -1,9 +1,9 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
+// import InputGroup from 'react-bootstrap/InputGroup';
+// import FormControl from 'react-bootstrap/FormControl';
 
 import '../form.css';
 
@@ -24,21 +24,21 @@ export default class Step1 extends React.Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername">
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="input" placeholder="" name="step2-id" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="step2-date" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="input" placeholder="" name="step2-ooid" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Policy Start Date</Form.Label>
-                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="step2--date" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>

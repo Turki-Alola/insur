@@ -13,7 +13,7 @@ import Header from './components/InputBar/header'
 const ParticlesOptions = {
   particles: {
     number: {
-      value: 5,
+      value: 7,
       density: {
         enable: false,
         value_area: 1000,

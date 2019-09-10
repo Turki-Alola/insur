@@ -1,9 +1,9 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
+// import Col from 'react-bootstrap/Col';
+// import InputGroup from 'react-bootstrap/InputGroup';
+// import FormControl from 'react-bootstrap/FormControl';
 import Toggle from 'react-toggle'
 // import ProgressBar from 'react-bootstrap/ProgressBar'
 import Spinner from 'react-bootstrap/Spinner'
@@ -30,6 +30,9 @@ export default class form extends React.Component {
             insurType: false,
             change: true,
             application: {
+                checkboxes:{
+                    trafficTickets: []
+                }
             }
         }
         this.handleChange = this.handleChange.bind(this);
@@ -56,7 +59,23 @@ export default class form extends React.Component {
         console.log("name: ", name);
         console.log("value: ", value);
         // console.log("event: ", event.target.value);
-        console.log("change: ", this.state.change)
+        // console.log("change: ", this.state.change)
+    }
+    handleCheckboxChange = (event)=>{
+        const value  = event.target.value;
+        let list = this.state.application.checkboxes.trafficTickets;
+        
+
+        if(list.includes(value)){
+            list.splice(list.indexOf(value), 1)
+        } else{
+            list.push(value);
+        }
+        console.log("Value: ", value);
+        console.log("List: ", list);
+        console.log("State: ", this.state)
+
+        
     }
 
     handleSubmit = (event) => {
@@ -109,8 +128,8 @@ export default class form extends React.Component {
     get getNext() {
         let currentStep = this.state.currentStep;
         let submitted = this.state.submitted;
-        console.log(currentStep);
-        console.log(this.state);
+        // console.log(currentStep);
+        // console.log(this.state);
 
         if (submitted === true && currentStep === 3) {
             // this.setState({
@@ -189,6 +208,7 @@ export default class form extends React.Component {
                     <Step1
                         handleChange={this.handleChange}
                         handleSpecialChange={this.handleSpecialChange}
+                        handleCheckboxChange = {this.handleCheckboxChange}
                         display={this.state.display}
                         currentStep={this.state.currentStep}
                         specialProps={this.state.application}

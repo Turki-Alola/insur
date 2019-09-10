@@ -12,7 +12,7 @@ export default class progressBar extends React.Component {
 
     render() {
         if (this.props.currentStep <= 3) {
-            console.log("progress", this.props.currentStep)
+            // console.log("progress", this.props.currentStep)
             
             return (
                 <div style={{ padding: '10px' }}>
