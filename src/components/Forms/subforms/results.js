@@ -9,9 +9,9 @@ import { Scrollbars } from 'react-custom-scrollbars';
 // import Table from 'react-bootstrap/Table';
 
 
-import Logo from '../logo.ico'
+// import Logo from '../logo.ico'
 import './results.css'
-import Listing from './listing.js'
+import Listing from './listing'
 import '../form.css';
 
 export default class Step1 extends React.Component {

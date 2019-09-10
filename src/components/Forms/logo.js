@@ -1,6 +1,6 @@
 import React from 'react';
 import './InputBar.css';
-import Logo from './logo.ico'
+import Logo from '../Assets/logo.ico'
 // import ImageFrame from '../ImageFrame/ImageFrame';
 
 

@@ -10,11 +10,11 @@ import Spinner from 'react-bootstrap/Spinner'
 // import Col from 'react-bootstrap/Col';
 import './form.css';
 import "react-toggle/style.css"
-import Step1 from './subforms/step1.js';
-import Step2 from './subforms/step2.js';
-import Step3 from './subforms/step3.js';
-import Results from './subforms/results.js';
-import ProgressBar from './progress.js';
+import Step1 from './subforms/step1';
+import Step2 from './subforms/step2';
+import Step3 from './subforms/step3';
+import Results from './subforms/results';
+import ProgressBar from './subforms/progress';
 
 
 

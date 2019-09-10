@@ -4,9 +4,9 @@ import 'tachyons';
 import Particles from 'react-particles-js';
 import 'bootstrap/dist/css/bootstrap.css';
 //components
-import Logo from './components/InputBar/logo.js';
-import Form from './components/InputBar/form2.js';
-import Header from './components/InputBar/header'
+import Logo from './components/Forms/logo.js';
+import Form from './components/Forms/form2.js';
+import Header from './components/Header/header'
 
 
 

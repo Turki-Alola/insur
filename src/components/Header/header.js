@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './header.css'
 import { Button } from 'reactstrap';
-import Vision from './2030.png'
+import Vision from '../Assets/2030.png'
 import ReactTooltip from 'react-tooltip'
 // import { MDBIcon, MDBContainer } from 'mdbreact';
 //import Nav from 'react-bootstrap/Navbar'

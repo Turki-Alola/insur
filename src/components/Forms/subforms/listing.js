@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-import Logo from '../logo.ico'
+import Logo from '../../Assets/logo.ico'
 import './results.css'
 import '../form.css';
 
