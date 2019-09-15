@@ -42,7 +42,7 @@ export default class Header extends Component {
                         </DropdownMenu>
                     </ButtonDropdown></li>
 
-                    <li><Button color="outline-success" id="btn-circle" data-tip="Polices in good standings">
+                    <li><Button color="outline-success" id="btn-circle" data-tip="Polices in good standings" value = "activePolices">
                         <a> 3 </a>
 
                         <ReactTooltip place="bottom" type="light" effect="solid" />

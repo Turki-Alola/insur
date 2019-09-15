@@ -36,7 +36,8 @@ class App extends Component {
     this.state = {
       currentStep: 1,
       displayApplication: true,
-      displayUserPanel: false
+      displayUserPanel: false,
+      panelDisplay: ""
 
     }
   }
@@ -55,11 +56,13 @@ class App extends Component {
       displayApplication: !this.state.displayApplication,
       displayUserPanel: !this.state.displayUserPanel
     })
-    console.log(this.Form);
   }
-
-  componentDidMount () {
-    console.log("mount: ",this.props.children);
+  handlePanelDisplay = (event) =>{
+    const value = event.target.value;
+    this.setState({
+      panelDisplay: value
+    }) 
+    console.log(value);
   }
 
   render() {
@@ -75,7 +78,7 @@ class App extends Component {
         <Header />
         <Logo onClick={this.displayForm}  />
         <Form display={this.state.displayApplication} onClick={this.displayForm} currentStep = {this.state.currentStep} />
-        <UserPanel display={this.state.displayUserPanel} onClick={this.displayForm}/>
+        <UserPanel display={this.state.displayUserPanel} onClick={this.handlePanelDisplay} currentDisplay = {this.state.currentDisplay} />
 
       </div>
     );
