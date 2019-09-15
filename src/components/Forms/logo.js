@@ -12,9 +12,8 @@ export default class InputBar extends React.Component {
             clicked: this.props.clicked,
             currentStep: this.props.currentStep
         };
-        console.log(this.state.clicked)
-        // this.click()
     }
+    
   
     // onClick =()=>{
     //     this.props.onClick();
@@ -28,7 +27,7 @@ export default class InputBar extends React.Component {
         return (
             <div className=''  >
                 
-                {/* <button onClick={this.props.onClick} >Display</button> */}
+                <button onClick={this.props.onClick} >Search</button>
                 <div>
                 <img src="" style={{width: "400px"}}/>
                 </div>

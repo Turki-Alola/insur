@@ -15,20 +15,17 @@ import Listing from './listing'
 import '../form.css';
 
 export default class Step1 extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
+    
 
     render() {
-        if (this.props.displayResults) {
-            document.getElementById('masterForm').style.width = "95%";
-            document.getElementById('masterForm').style.left = "3%";
+        if (this.props.displayResults && this.props.currentStep === 4) {
+            // document.getElementById('masterForm').style.width = "95%";
+            // document.getElementById('masterForm').style.left = "3%";
             return (
-                <div className="listing" >
+                <div className=""  >
                     <Scrollbars
                         autoHeight
-                        autoHeightMax={500}
+                        autoHeightMax={window.innerHeight * 0.65}
                         universal
                     >
                         <Listing />

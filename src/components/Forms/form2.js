@@ -23,7 +23,7 @@ export default class form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentStep: 1,
+            currentStep: this.props.currentStep,
             display: this.props.display,
             submitted: false,
             displayResults: false,
@@ -38,6 +38,7 @@ export default class form extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    
     handleChange = (event) => {
         const { name, value } = event.target;
         //sub-state work around
@@ -58,6 +59,7 @@ export default class form extends React.Component {
         this.state.application[name] = value;
         console.log("name: ", name);
         console.log("value: ", value);
+        console.log(this.state);
         // console.log("event: ", event.target.value);
         // console.log("change: ", this.state.change)
     }
@@ -80,17 +82,17 @@ export default class form extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const { currentStep, display, id, date, submitted } = this.state
+        // const { currentStep, display, id, date, submitted } = this.state
         console.log(this.state)
         this.setState({
-            submitted: !submitted
+            submitted: !this.state.submitted
         })
         setTimeout(() => {
             this.setState({
                 displayResults: true,
                 currentStep: this.state.currentStep += 1
             })
-        }, 3000);
+        }, 0);
 
     }
     next = () => {
@@ -184,9 +186,11 @@ export default class form extends React.Component {
     }
 
     render() {
+        if (this.props.display){
         return (
             <div>
-                <form onSubmit={this.handleSubmit} className="form" style={{ opacity: this.props.display ? "1" : "0" }} id="masterForm">
+                <form onSubmit={this.handleSubmit} className="form" id="masterForm" style ={{width: this.state.currentStep === 4? "95%":"45%", 
+                                                                                            left: this.state.currentStep === 4? "3%":"50%"}}>
                     {this.state.currentStep < 4 ?
                         <label
                             style={{ position: "absolute", left: "5%" }}
@@ -225,8 +229,8 @@ export default class form extends React.Component {
                     />
                     <Results
                         handleChange={this.handleChange}
-                        display={this.state.display}
                         displayResults={this.state.displayResults}
+                        currentStep = {this.state.currentStep}
                     />
 
                     {this.getPrev}
@@ -234,5 +238,8 @@ export default class form extends React.Component {
                 </form>
             </div>
         )
+                    } else{
+                        return null;
+                    }
     }
 }

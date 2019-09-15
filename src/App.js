@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 //components
 import Logo from './components/Forms/logo.js';
 import Form from './components/Forms/form2.js';
-import Header from './components/Header/header'
+import Header from './components/Header/header';
+import UserPanel from './components/UserPanel/userPanel.js'
 
 
 
@@ -33,25 +34,32 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      clicked: true,
-      display: true
+      currentStep: 1,
+      displayApplication: true,
+      displayUserPanel: false
+
     }
   }
-  click = () => {
-    console.log('clicked');
-    this.setState({
-      clicked: !this.state.clicked,
-      currentStep: 1
-    });
-    this.displayForm();
-    // this.render();
-  }
+  // click = () => {
+  //   console.log('clicked');
+  //   this.setState({
+  //     clicked: !this.state.clicked,
+  //     currentStep: 1
+  //   });
+  //   this.displayForm();
+  //   // this.render();
+  // }
   displayForm = () => {
-    console.log(this.state.display);
     this.setState({
-      display: !this.state.display,
-      currentStep: 1
+      currentStep: 1,
+      displayApplication: !this.state.displayApplication,
+      displayUserPanel: !this.state.displayUserPanel
     })
+    console.log(this.Form);
+  }
+
+  componentDidMount () {
+    console.log("mount: ",this.props.children);
   }
 
   render() {
@@ -65,8 +73,9 @@ class App extends Component {
           }}
         />
         <Header />
-        <Logo onClick={this.click} clicked={this.state.clicked} />
-        <Form display={this.state.display} onClick={this.displayForm} currentStep = {this.state.currentStep} />
+        <Logo onClick={this.displayForm}  />
+        <Form display={this.state.displayApplication} onClick={this.displayForm} currentStep = {this.state.currentStep} />
+        <UserPanel display={this.state.displayUserPanel} onClick={this.displayForm}/>
 
       </div>
     );

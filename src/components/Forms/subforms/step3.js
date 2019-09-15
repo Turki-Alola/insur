@@ -17,8 +17,8 @@ export default class Step1 extends React.Component {
 
     render() {
         if (this.props.currentStep === 3) {
-            document.getElementById('masterForm').style.width = "45%";
-            document.getElementById('masterForm').style.left = "50%";
+            // document.getElementById('masterForm').style.width = "45%";
+            // document.getElementById('masterForm').style.left = "50%";
             // document.getElementById('masterForm').style.transition= "650ms";
             return (
                 <div className='subform' >
