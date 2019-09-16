@@ -42,20 +42,20 @@ export default class Header extends Component {
                         </DropdownMenu>
                     </ButtonDropdown></li>
 
-                    <li><Button color="outline-success" id="btn-circle" data-tip="Polices in good standings" value = "activePolices">
-                        <a> 3 </a>
+                    <li><Button color="outline-success" id="btn-circle" data-tip="Polices in good standings" value = "goodStanding" onClick= {this.props.onClick}>
+                         3
 
                         <ReactTooltip place="bottom" type="light" effect="solid" />
                     </Button></li>
 
-                    <li><Button color="outline-warning" id="btn-circle" data-tip="Policies near expiry" >
-                        <a > 2 </a>
+                    <li><Button color="outline-warning" id="btn-circle" data-tip="Policies near expiry" value = "nearExpiry" onClick= {this.props.onClick}>
+                        2 
 
                         <ReactTooltip place="bottom" type="light" effect="solid" />
 
                     </Button></li>
-                    <li><Button color="outline-danger" id="btn-circle" data-tip="Expired Policies">
-                        <a>4 </a>
+                    <li><Button color="outline-danger" id="btn-circle" data-tip="Expired Policies" value = "expired" onClick= {this.props.onClick}>
+                        4
 
                         <ReactTooltip place="bottom" type="light" effect="solid" />
 
