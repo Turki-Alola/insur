@@ -20,5 +20,6 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     z-index: -1;
+    border-radius: 10px;
     /* overflow: hidden; */
 }
