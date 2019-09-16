@@ -37,9 +37,9 @@ export default class Listing extends React.Component{
                                             position: "relative",
                                             float: "left"
                                             }}/>
-          <ListGroupItemHeading >Custom name, default is license plate number </ListGroupItemHeading>
+          <ListGroupItemHeading >{this.props.name} </ListGroupItemHeading>
           <ListGroupItemText>
-          Expiry date
+          {this.props.date}
           </ListGroupItemText>
         </ListGroupItem>
       </ListGroup>
