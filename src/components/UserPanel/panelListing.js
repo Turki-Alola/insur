@@ -26,11 +26,12 @@ export default class Listing extends React.Component{
         return theme;
     }
 
+   
     render(){
         return(
-            <div color= "green" style={{transition: "1s"}}>
+            <div>
              <ListGroup flush >
-        <ListGroupItem href="#" tag="button" class= "border-0" color={this.getTheme()} style={{backgroundColor: "transparent", margin: "10px 15px 10px 10px"}} >
+        <ListGroupItem href="#" tag="button"   style={{backgroundColor: "transparent", margin: "10px 15px 10px 10px"}} >
             <img src={Vision} alt="" style={{width: "64px", 
                                             height: "64px",
                                             position: "relative",

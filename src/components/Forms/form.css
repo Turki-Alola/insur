@@ -22,16 +22,3 @@
     z-index: -1;
     /* overflow: hidden; */
 }
-
-.subform {
-    transition: 10s;
-    /* transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear; */
-}
-
-
-/* .form-wrapper {
-    transition: 1s;
-} */
-
-
-/* overflow: hidden; */

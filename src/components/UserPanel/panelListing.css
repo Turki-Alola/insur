@@ -1,0 +1,37 @@
+#pointer {
+    width: 100px;
+    height: 40px;
+    position: fixed;
+    background: green;
+    float: left;
+}
+
+#pointer:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid green;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+#pointer:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid green;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+#shapeContainer {
+    position: relative;
+    height: 40px;
+    border: 1px;
+}

@@ -35,8 +35,8 @@ class App extends Component {
     super();
     this.state = {
       currentStep: 1,
-      displayApplication: true,
-      displayUserPanel: false,
+      displayApplication: false,
+      displayUserPanel: true,
       panelDisplay: ""
 
     }
