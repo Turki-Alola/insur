@@ -29,21 +29,22 @@ export default class form extends React.Component {
             displayResults: false,
             insurType: false,
             change: true,
-            application: {
-                checkboxes:{
+            form: {
+                checkboxes: {
                     trafficTickets: []
                 }
             }
         }
         this.handleChange = this.handleChange.bind(this);
+        // console.log(this.state)
     }
 
-    
+
     handleChange = (event) => {
         const { name, value } = event.target;
         //sub-state work around
 
-        this.state.application[name] = value;
+        this.state.form[name] = value;
         // console.log("name: ", name);
         // console.log("value: ", value);
         // console.log("event: ", event.target.value);
@@ -56,28 +57,28 @@ export default class form extends React.Component {
         this.setState({
             change: !this.state.change
         })
-        this.state.application[name] = value;
+        this.state.form[name] = value;
         console.log("name: ", name);
         console.log("value: ", value);
         console.log(this.state);
         // console.log("event: ", event.target.value);
         // console.log("change: ", this.state.change)
     }
-    handleCheckboxChange = (event)=>{
-        const value  = event.target.value;
-        let list = this.state.application.checkboxes.trafficTickets;
-        
+    handleCheckboxChange = (event) => {
+        const value = event.target.value;
+        let list = this.state.form.checkboxes.trafficTickets;
 
-        if(list.includes(value)){
+
+        if (list.includes(value)) {
             list.splice(list.indexOf(value), 1)
-        } else{
+        } else {
             list.push(value);
         }
         console.log("Value: ", value);
         console.log("List: ", list);
         console.log("State: ", this.state)
 
-        
+
     }
 
     handleSubmit = (event) => {
@@ -186,60 +187,62 @@ export default class form extends React.Component {
     }
 
     render() {
-        if (this.props.display){
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit} className="form" id="masterForm" style ={{width: this.state.currentStep === 4? "95%":"45%", 
-                                                                                            left: this.state.currentStep === 4? "3%":"50%"}}>
-                    {this.state.currentStep < 4 ?
-                        <label
-                            style={{ position: "absolute", left: "5%" }}
-                        >
-                            <Toggle
-                                defaultChecked={this.state.insurType}
-                                onChange={this.handleToggleChange}
-                                icons={false}
-                                style={{}}
+        if (this.props.display == 'form') {
+            return (
+                <div>
+                    <form onSubmit={this.handleSubmit} className="form" id="masterForm" style={{
+                        width: this.state.currentStep === 4 ? "95%" : "45%",
+                        left: this.state.currentStep === 4 ? "3%" : "50%"
+                    }}>
+                        {this.state.currentStep < 4 ?
+                            <label
+                                style={{ position: "absolute", left: "5%" }}
+                            >
+                                <Toggle
+                                    defaultChecked={this.state.insurType}
+                                    onChange={this.handleToggleChange}
+                                    icons={false}
+                                    style={{}}
 
-                            />
-                            <span style={{ paddingLeft: "10px" }}>{this.state.insurType ? "Premium" : "Third Party"}</span>
-                        </label>
+                                />
+                                <span style={{ paddingLeft: "10px" }}>{this.state.insurType ? "Premium" : "Third Party"}</span>
+                            </label>
 
-                        : null}
-                    <ProgressBar
-                        currentStep={this.state.currentStep}
-                    />
-                    <Step1
-                        handleChange={this.handleChange}
-                        handleSpecialChange={this.handleSpecialChange}
-                        handleCheckboxChange = {this.handleCheckboxChange}
-                        display={this.state.display}
-                        currentStep={this.state.currentStep}
-                        specialProps={this.state.application}
-                    />
-                    <Step2
-                        handleChange={this.handleChange}
-                        display={this.state.display}
-                        currentStep={this.state.currentStep}
-                    />
-                    <Step3
-                        handleChange={this.handleChange}
-                        display={this.state.display}
-                        currentStep={this.state.currentStep}
-                    />
-                    <Results
-                        handleChange={this.handleChange}
-                        displayResults={this.state.displayResults}
-                        currentStep = {this.state.currentStep}
-                    />
+                            : null}
+                        <ProgressBar
+                            currentStep={this.state.currentStep}
+                        />
+                        <Step1
+                            handleChange={this.handleChange}
+                            handleSpecialChange={this.handleSpecialChange}
+                            handleCheckboxChange={this.handleCheckboxChange}
+                            display={this.state.display}
+                            currentStep={this.state.currentStep}
+                            specialProps={this.state.form}
+                        />
+                        <Step2
+                            handleChange={this.handleChange}
+                            display={this.state.display}
+                            currentStep={this.state.currentStep}
+                        />
+                        <Step3
+                            handleChange={this.handleChange}
+                            display={this.state.display}
+                            currentStep={this.state.currentStep}
+                        />
+                        <Results
+                            handleChange={this.handleChange}
+                            displayResults={this.state.displayResults}
+                            currentStep={this.state.currentStep}
+                        />
 
-                    {this.getPrev}
-                    {this.getNext}
-                </form>
-            </div>
-        )
-                    } else{
-                        return null;
-                    }
+                        {this.getPrev}
+                        {this.getNext}
+                    </form>
+                </div>
+            )
+        } else {
+            return null;
+        }
     }
 }

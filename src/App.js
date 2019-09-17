@@ -35,8 +35,7 @@ class App extends Component {
     super();
     this.state = {
       currentStep: 1,
-      displayApplication: true,
-      displayUserPanel: false,
+      display: 'form',
       panelDisplay: ""
 
     }
@@ -53,16 +52,14 @@ class App extends Component {
   displayForm = () => {
     this.setState({
       currentStep: 1,
-      displayApplication: true,
-      displayUserPanel: false
+      display: 'form'
     })
   }
   handlePanelDisplay = (event) =>{
     const value = event.target.value;
     this.setState({
       panelDisplay: value,
-      displayApplication: false,
-      displayUserPanel: true
+      display: 'panel'
     }) 
     console.log(value);
   }
@@ -79,8 +76,8 @@ class App extends Component {
         />
         <Header onClick={this.handlePanelDisplay}/>
         <Logo onClick={this.displayForm}  />
-        <Form display={this.state.displayApplication} onClick={this.displayForm} currentStep = {this.state.currentStep} />
-        <UserPanel display={this.state.displayUserPanel}  currentDisplay = {this.state.currentDisplay} panel = {this.state.panelDisplay}/>
+        <Form display={this.state.display} onClick={this.displayForm} currentStep = {this.state.currentStep} />
+        <UserPanel display={this.state.display}   panel = {this.state.panelDisplay}/>
 
       </div>
     );
