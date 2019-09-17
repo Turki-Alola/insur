@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Logo from './components/Forms/logo.js';
 import Form from './components/Forms/form2.js';
 import Header from './components/Header/header';
-import UserPanel from './components/UserPanel/userPanel.js'
+import UserPanel from './components/UserPanel/policyPanel.js'
 
 
 

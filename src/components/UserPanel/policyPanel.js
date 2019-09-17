@@ -3,7 +3,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { Button} from 'reactstrap';
 import ReactTooltip from 'react-tooltip'
 
-import Listing from './panelListing.js'
+import Listing from './policyListing.js'
 import '../Forms/form.css'
 import './panelListing.css'
 
