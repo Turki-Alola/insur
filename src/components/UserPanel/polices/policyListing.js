@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
-import Logo from '../Assets/logo.ico'
+import Logo from '../../Assets/logo.ico'
 import "./panelListing.css"
 
 export default class Listing extends React.Component{

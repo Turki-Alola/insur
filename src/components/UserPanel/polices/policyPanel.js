@@ -4,7 +4,7 @@ import { Button} from 'reactstrap';
 import ReactTooltip from 'react-tooltip'
 
 import Listing from './policyListing.js'
-import '../Forms/form.css'
+import '../../Forms/form.css'
 import './panelListing.css'
 
 export default class UserPanel extends React.Component {

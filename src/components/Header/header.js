@@ -36,7 +36,7 @@ export default class Header extends Component {
                         </DropdownToggle>
                         <DropdownMenu>
                             <DropdownItem header>Header</DropdownItem>
-                            <DropdownItem>Action </DropdownItem>
+                            <DropdownItem>Settings </DropdownItem>
                             <DropdownItem divider />
                             <DropdownItem>Logout</DropdownItem>
                         </DropdownMenu>

@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Logo from './components/Forms/logo.js';
 import Form from './components/Forms/form2.js';
 import Header from './components/Header/header';
-import UserPanel from './components/UserPanel/policyPanel.js'
+import UserPanel from './components/UserPanel/polices/policyPanel.js'
+import Registration from './components/UserPanel/registration/registration.js'
 
 
 
@@ -35,7 +36,7 @@ class App extends Component {
     super();
     this.state = {
       currentStep: 1,
-      display: 'form',
+      display: 'registration',
       panelDisplay: ""
 
     }
@@ -63,6 +64,10 @@ class App extends Component {
     }) 
     console.log(value);
   }
+  displayRegistration = (event)=>{
+    const value = event.target.value;
+    console.log(value);
+  }
 
   render() {
     return (
@@ -78,6 +83,8 @@ class App extends Component {
         <Logo onClick={this.displayForm}  />
         <Form display={this.state.display} onClick={this.displayForm} currentStep = {this.state.currentStep} />
         <UserPanel display={this.state.display}   panel = {this.state.panelDisplay}/>
+        <Registration display = {this.state.display}/>
+
 
       </div>
     );
