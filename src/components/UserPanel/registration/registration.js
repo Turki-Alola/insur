@@ -14,36 +14,30 @@ export default class Registration extends React.Component {
         super(props);
         this.state = {
             render: true,
-            fields: {
-                email: "",
-                phone: "",
-                password: ""
-            }
+            email: "",
+            phone: "",
+            password: ""
         }
     }
 
     handleSubmit = (event)=>{
         event.preventDefault();
-        this.renderOnDemand();
-        
     }
 
     handleChange = (event) => {
         const {name, value} = event.target;
-        this.state.fields[name] = value;
-        // this.setState({
-        //     fields{
-        //     [name] : value
-        //     }
-        // });
-        console.log("reg: ", this.state);
+        // this.state.fields[name] = value;
+        this.setState({
+            [name] : value
+        });
+        // console.log("reg: ", this.state);
     }
 
     renderOnDemand = () =>{
         this.setState({
             render : !this.state.render
         });
-        console.log("submit: ", this.state);
+        // console.log("submit: ", this.state);
     }
 
     render() {
@@ -71,9 +65,9 @@ export default class Registration extends React.Component {
                             Submit
   </Button>
                     </Form>
-                <p>{this.state.fields.email}</p>
-                <p>{this.state.fields.phone}</p>
-                <p>{this.state.fields.password}</p>
+                <p>{this.state.email}</p>
+                <p>{this.state.phone}</p>
+                <p>{this.state.password}</p>
                 </div>
             );
         } else {
