@@ -40,8 +40,8 @@ export default class Listing extends React.Component{
                                             }}/>
             <div style={{textAlign: "left", marginLeft: "14%", position: "relative"}}>
           <ListGroupItemHeading >{this.props.name} </ListGroupItemHeading>
-          <ListGroupItemText style={{marginLeft: "px"}}>
-          {this.props.date}
+          <ListGroupItemText >
+          {this.props.date["day"] + "/" +this.props.date["month"] + "/" + this.props.date["year"]}
           </ListGroupItemText>
             </div>
         </ListGroupItem>
