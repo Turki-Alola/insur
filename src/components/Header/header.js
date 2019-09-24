@@ -35,8 +35,8 @@ export default class Header extends Component {
                             Mohammed
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem header>Header</DropdownItem>
-                            <DropdownItem>Settings </DropdownItem>
+                            <DropdownItem header>Design TBD</DropdownItem>
+                            <DropdownItem onClick = {this.props.registration}>Register </DropdownItem>
                             <DropdownItem divider />
                             <DropdownItem>Logout</DropdownItem>
                         </DropdownMenu>

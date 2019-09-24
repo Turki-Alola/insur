@@ -31,6 +31,11 @@ export default class Registration extends React.Component {
     handleChange = (event) => {
         const {name, value} = event.target;
         this.state.fields[name] = value;
+        // this.setState({
+        //     fields{
+        //     [name] : value
+        //     }
+        // });
         console.log("reg: ", this.state);
     }
 
@@ -38,6 +43,7 @@ export default class Registration extends React.Component {
         this.setState({
             render : !this.state.render
         });
+        console.log("submit: ", this.state);
     }
 
     render() {

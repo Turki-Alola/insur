@@ -64,9 +64,11 @@ class App extends Component {
     }) 
     console.log(value);
   }
+
   displayRegistration = (event)=>{
-    const value = event.target.value;
-    console.log(value);
+    this.setState({
+      display :"registration"
+    })
   }
 
   render() {
@@ -79,7 +81,7 @@ class App extends Component {
             width: '100%',
           }}
         />
-        <Header onClick={this.handlePanelDisplay}/>
+        <Header onClick={this.handlePanelDisplay} registration ={this.displayRegistration}/>
         <Logo onClick={this.displayForm}  />
         <Form display={this.state.display} onClick={this.displayForm} currentStep = {this.state.currentStep} />
         <UserPanel display={this.state.display}   panel = {this.state.panelDisplay}/>
