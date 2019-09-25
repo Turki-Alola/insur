@@ -36,7 +36,7 @@ class App extends Component {
     super();
     this.state = {
       currentStep: 1,
-      display: 'registration',
+      display: 'form',
       panelDisplay: ""
 
     }

@@ -24,41 +24,41 @@ export default class Step1 extends React.Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername">
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="step2-id" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="input" placeholder="" name="step2-id" step = "step2" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="date" placeholder="" name="step2-date" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="step2-date" step = "step2" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="step2-ooid" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="input" placeholder="" name="step2-ooid" step = "step2" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Policy Start Date</Form.Label>
-                            <Form.Control type="date" placeholder="" name="step2--date" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="step2--date" step = "step2" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="formGridUsername" >
+                            <Form.Label>Step2 info22</Form.Label>
+                            <Form.Control type="input" placeholder="" name="id2" step = "step2" onChange={this.props.handleChange}></Form.Control>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridPassword">
+                            <Form.Label>Step2 info</Form.Label>
+                            <Form.Control type="date" placeholder="" name="date2" step = "step2" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="input" placeholder="" name="id" step = "step2" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
-                        </Form.Group>
-                    </Form.Row>
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridUsername" >
-                            <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange}></Form.Control>
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridPassword">
-                            <Form.Label>Step2 info</Form.Label>
-                            <Form.Control type="date" placeholder="" name="date" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="date" step = "step2" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
 

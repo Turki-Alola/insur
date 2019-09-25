@@ -47,17 +47,17 @@ export default class Step1 extends React.Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>National ID / Iqama</Form.Label>
-                            <Form.Control type="input" placeholder="" name="id" onChange={this.props.handleChange} ></Form.Control>
+                            <Form.Control type="input" placeholder="" name="id" step = "step1" onChange={this.props.handleChange} ></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Policy Start date</Form.Label>
-                            <Form.Control type="date" placeholder="" name="policyStartDate" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="policyStartDate" step = "step1" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>ID / Iqama expiry date</Form.Label>
-                            <Form.Control type="month" placeholder="" name="idExpiryDate" onChange={this.props.handleChange}></Form.Control>
+                            <Form.Control type="month" placeholder="" name="idExpiryDate" step = "step1" onChange={this.props.handleChange}></Form.Control>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGrid">

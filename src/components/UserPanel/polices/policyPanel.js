@@ -26,28 +26,28 @@ export default class UserPanel extends React.Component {
         let month = today.getMonth() + 1;
         let year = today.getFullYear();
         // console.log(day, month, year);
-        this.dates.forEach((item, key) => {
-            const threshold = 2;
+        const threshold = 8;
+        this.data.forEach((item) => {
             let givenYear = parseInt(item["date"]["year"]);
             let givenMonth = parseInt(item["date"]["month"]);
             let givenDay = parseInt(item["date"]["day"]);
-            let adjustedMonth = month + ((year  - givenYear) * 12);
-            console.log(givenDay,  givenMonth, givenYear);
+            let adjustedMonth = month + ((year - givenYear) * 12);
+            console.log(givenDay, givenMonth, givenYear);
             // console.log("adj: ", adjustedMonth)
-            console.log("formula: " + givenMonth + " - " + adjustedMonth +" = ",givenMonth  - adjustedMonth);
+            console.log("formula: " + givenMonth + " - " + adjustedMonth + " = ", givenMonth - adjustedMonth);
             let result = this.comparedTo(givenYear, year);
-            if (result >= 0) {
+            //compares up to 1 year difference, else adds to to expired list
+            if (result >= -1) {
                 // x -- y = x + y
-                if ((givenMonth  - adjustedMonth) > threshold) {
+                if ((givenMonth - adjustedMonth) > threshold) {
                     this.goodStanding.push(item);
-                } else  if (givenMonth  - adjustedMonth > 0){
-                    // console.log("near");
+                } else if (givenMonth - adjustedMonth > 0) {
                     this.nearExpiry.push(item);
-                } else if (givenMonth  - adjustedMonth === 0) {
-                    console.log("here", day  , givenDay )
-                    givenDay> day ? 
-                    this.nearExpiry.push(item): this.expired.push(item);
-                } else{
+                } else if (givenMonth - adjustedMonth === 0) {
+                    // console.log("here", day  , givenDay )
+                    givenDay > day ?
+                        this.nearExpiry.push(item) : this.expired.push(item);
+                } else {
                     this.expired.push(item);
                 }
             } else {
@@ -66,16 +66,16 @@ export default class UserPanel extends React.Component {
     goodStanding = [
     ];
     nearExpiry = [
-    ]
+    ];
     expired = [
-    ]
+    ];
 
-    dates = [
+    data = [
         {
             name: "Company2", date: {
-                day: "17",
-                month: "3",
-                year: "2018"
+                day: "25",
+                month: "9",
+                year: "2019"
             }
         },
         {

@@ -32,6 +32,12 @@ export default class form extends React.Component {
             form: {
                 checkboxes: {
                     trafficTickets: []
+                },
+                fields: {
+                    step1: {},
+                    step2: {},
+                    step3: {},
+                    step4: {}
                 }
             }
         }
@@ -41,16 +47,31 @@ export default class form extends React.Component {
 
 
     handleChange = (event) => {
-        const { name, value } = event.target;
+        const { name, value, step } = event.target;
         //sub-state work around
-
-        this.state.form[name] = value;
+        // let placeHolder = this.state.form.fields;
+        // placeHolder[name] = value;
+        // this.state.form[name] = value;
+        this.setState(previousState => ({
+            form: {
+                ...previousState.form,
+                fields: {
+                    ...previousState.form.fields,
+                    [step]: {
+                        ...previousState.form.fields[step],
+                        [name]: value
+                    }
+                }
+            }
+        }))
+        // placeHolder = null;
         // console.log("name: ", name);
         // console.log("value: ", value);
         // console.log("event: ", event.target.value);
         // console.log("change: ",this.state.change)
-        console.log(this.state)
+        console.log(this.state.form.fields);
     }
+
     handleSpecialChange = (event) => {
         const { name, value } = event.target;
         //sub-state work around
@@ -64,6 +85,7 @@ export default class form extends React.Component {
         // console.log("event: ", event.target.value);
         // console.log("change: ", this.state.change)
     }
+
     handleCheckboxChange = (event) => {
         const value = event.target.value;
         let list = this.state.form.checkboxes.trafficTickets;
