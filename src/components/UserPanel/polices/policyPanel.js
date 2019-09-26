@@ -26,7 +26,7 @@ export default class UserPanel extends React.Component {
         let month = today.getMonth() + 1;
         let year = today.getFullYear();
         // console.log(day, month, year);
-        const threshold = 8;
+        const threshold = 3;
         this.data.forEach((item) => {
             let givenYear = parseInt(item["date"]["year"]);
             let givenMonth = parseInt(item["date"]["month"]);

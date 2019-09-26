@@ -34,10 +34,6 @@ export default class form extends React.Component {
                     trafficTickets: []
                 },
                 fields: {
-                    step1: {},
-                    step2: {},
-                    step3: {},
-                    step4: {}
                 }
             }
         }
@@ -48,10 +44,6 @@ export default class form extends React.Component {
 
     handleChange = (event) => {
         const { name, value, step } = event.target;
-        //sub-state work around
-        // let placeHolder = this.state.form.fields;
-        // placeHolder[name] = value;
-        // this.state.form[name] = value;
         this.setState(previousState => ({
             form: {
                 ...previousState.form,
@@ -65,25 +57,31 @@ export default class form extends React.Component {
             }
         }))
         // placeHolder = null;
-        // console.log("name: ", name);
-        // console.log("value: ", value);
+        console.log("name: ", name);
+        console.log("value: ", value);
         // console.log("event: ", event.target.value);
         // console.log("change: ",this.state.change)
+        console.log("step: ", step)
         console.log(this.state.form.fields);
     }
 
     handleSpecialChange = (event) => {
         const { name, value } = event.target;
         //sub-state work around
-        this.setState({
-            change: !this.state.change
-        })
-        this.state.form[name] = value;
+        // this.setState({
+        //     change: !this.state.change
+        // })
+        // this.state.form[name] = value;
+        this.setState(previousState => ({
+            form: {
+                ...previousState.form,
+                [name]: value
+                }
+        }))
         console.log("name: ", name);
         console.log("value: ", value);
+        
         console.log(this.state);
-        // console.log("event: ", event.target.value);
-        // console.log("change: ", this.state.change)
     }
 
     handleCheckboxChange = (event) => {
