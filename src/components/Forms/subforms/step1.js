@@ -61,17 +61,17 @@ export default class Step1 extends React.Component {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>National ID / Iqama</Form.Label>
-                            <Form.Control type="number" placeholder="" name="id" step="step1" onChange={this.props.handleSpecialChange} ></Form.Control>
+                            <Form.Control type="number" placeholder="" name="id" step="step1" onChange={this.props.handleSpecialChange} value = {this.props.specialProps.id || ""}></Form.Control>
                         </Form.Group>
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Policy Start date</Form.Label>
-                            <Form.Control type="date" placeholder="" name="policyStartDate" step="step1" onChange={this.props.handleSpecialChange}></Form.Control>
+                            <Form.Control type="date" placeholder="" name="policyStartDate" step="step1" onChange={this.props.handleSpecialChange} value = {this.props.specialProps.policyStartDate || ""}></Form.Control>
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridUsername" >
                             <Form.Label>ID / Iqama expiry date</Form.Label>
-                            <Form.Control type="month" placeholder="" name="idExpiryDate" step="step1" onChange={this.props.handleSpecialChange}></Form.Control>
+                            <Form.Control type="month" placeholder="" name="idExpiryDate" step="step1" onChange={this.props.handleSpecialChange} value = {this.props.specialProps.idExpiryDate || ""}></Form.Control>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGrid">
@@ -181,22 +181,40 @@ export default class Step1 extends React.Component {
 
                             </Form.Control>
                         </Form.Group>
-                    </Form.Row>
-                    <Form.Row>
-                        <Form.Group as={Col} >
+                        <Form.Group  as={Col} >
                             <Form.Label>Marital Status</Form.Label>
                             <Form.Control as="select" name="married" onChange={this.props.handleSpecialChange} value={this.props.specialProps.married}>
-                                <option >No</option>
-                                <option >Yes</option>
+                                <option value = "No">Not Married</option>
+                                <option value = "Yes">Married</option>
                             </Form.Control>
-                        </Form.Group>
-                        <Form.Group as={Col}>
-                            <Form.Label>Number of Children below 16</Form.Label>
-                            <Form.Control type="number" name = "numberOfChildren"onChange={this.props.handleSpecialChange} disabled = {this.props.specialProps.married ==="Yes" ? false: true}>
-                            </Form.Control>
-                        </Form.Group>
-
+                            </Form.Group>
                     </Form.Row>
+                    <Form.Row>
+                        <Form.Group  as={Col} >
+                            <Form.Label>Policy holder Driving the Vehicle?</Form.Label>
+                            <Form.Control as="select" name="policyHolderDrives" onChange={this.props.handleSpecialChange} value={this.props.specialProps.married}>
+                                <option value = "Yes">Yes</option>
+                                <option value = "No">No</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group  as={Col} >
+                            <Form.Label>Type of Driver's License</Form.Label>
+                            <Form.Control as="select" name="typeOfLicense" onChange={this.props.handleSpecialChange} value={this.props.specialProps.married}
+                            defaultValue={this.props.specialProps.typeOfLicense || "placeholder"}>
+                            <option disabled value = "placeholder">Choose...</option>
+                                <option value = "Private License">Private License</option>
+                                <option value = "Public License">Public License</option>
+                                <option value = "Motorcycle License">Motorcycle License</option>
+                            </Form.Control>
+                        </Form.Group>
+                    </Form.Row>
+                        {this.props.specialProps.married ==="Yes" ?
+                        <Form.Group style={{ width: "48%"}}>
+                            <Form.Label>Number of Children below 16</Form.Label>
+                            <Form.Control type="number" name = "numberOfChildren"onChange={this.props.handleSpecialChange} value ={this.specialProps.numberOfChildren ? 12 : 0} >
+                            </Form.Control>
+                        </Form.Group>
+                    : null}
                    
 
                 </div>

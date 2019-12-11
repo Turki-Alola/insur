@@ -113,7 +113,7 @@ export default class form extends React.Component {
                 displayResults: true,
                 currentStep: this.state.currentStep += 1
             })
-        }, 0);
+        }, 3000);
 
     }
     next = () => {
